@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DEEN Jewelry Order Form</title>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+
+// Buy Now Product Auto Fill
+const params = new URLSearchParams(window.location.search);
+const productCode = params.get("product");
+if(productCode){
+ document.getElementById("product").value = productCode;
+}
+
+</script>
+
+<style>
+
+body{
+background:black;
+font-family:Georgia,serif;
+color:gold;
+margin:0;
+}
+
+.container{
+width:500px;
+margin:40px auto;
+padding:30px;
+border:2px solid gold;
+border-radius:10px;
+box-shadow:0 0 20px gold;
+}
+
+h1{
+text-align:center;
+}
+
+label{
+font-size:18px;
+}
+
+input,textarea{
+
+width:100%;
+padding:12px;
+margin-top:8px;
+margin-bottom:18px;
+background:black;
+color:white;
+border:2px solid gold;
+border-radius:5px;
+font-size:16px;
+box-sizing:border-box;
+
+}
+
+textarea{
+
+height:100px;
+
+}
+
+button{
+
+width:100%;
+padding:15px;
+font-size:20px;
+background:gold;
+color:black;
+border:none;
+border-radius:5px;
+cursor:pointer;
+transition:.4s;
+
+}
+
+button:hover{
+
+background:#d4af37;
+
+}
+
+.home{
+
+display:block;
+text-align:center;
+margin-top:20px;
+color:gold;
+text-decoration:none;
+font-size:20px;
+
+}
+
+.home:hover{
+
+color:white;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>DEEN Jewelry Order Form</h1>
+
+<form id="orderForm">
+
+<label>Name</label>
+<input type="text" id="name" required>
+
+<label>Phone Number</label>
+<input type="text" id="phone" required>
+
+<label>Email</label>
+<input type="email" id="email" required>
+
+<label>Address</label>
+<textarea id="address" required></textarea>
+
+<label>Product Code</label>
+<input type="text" id="product" required>
+
+<label>Quantity</label>
+<input type="number" id="quantity" required>
+
+<label>Message</label>
+<textarea id="message"></textarea>
+
+<button type="button" onclick="sendOrder()">
+
+Submit Order
+
+</button>
+
+</form>
+
+<a href="index.html" class="home">
+
+⬅ Back To Home
+
+</a>
+
+</div>
+
+<script>
+
+emailjs.init({
+publicKey:"QTrCBAgFaKBApv650"
+});
+
+function sendOrder(){
+
+emailjs.send("service_he9jb5r","template_tvtsoda",{
+
+name:document.getElementById("name").value,
+
+phone:document.getElementById("phone").value,
+
+email:document.getElementById("email").value,
+
+address:document.getElementById("address").value,
+
+product:document.getElementById("product").value,
+
+quantity:document.getElementById("quantity").value,
+
+message:document.getElementById("message").value
+
+})
+
+.then(function(){
+
+alert("✅ Order Sent Successfully!");
+
+document.getElementById("orderForm").reset();
+
+})
+
+.catch(function(error){
+
+alert("❌ Error: " + JSON.stringify(error));
+
+});
+
+}
+
+
+
+// Buy Now Product Auto Fill
+const params = new URLSearchParams(window.location.search);
+const productCode = params.get("product");
+if(productCode){
+ document.getElementById("product").value = productCode;
+}
+
+</script>
+
+</body>
+</html>
