@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>DEEN Jewelry</title>
+
+<style>
+
+body{
+margin:0;
+background:black;
+font-family:Georgia,serif;
+overflow-x:hidden;
+}
+
+hr{
+border:1px solid gold;
+}
+
+.hero{
+display:flex;
+justify-content:space-evenly;
+align-items:center;
+padding:40px;
+gap:20px;
+}
+
+.side{
+width:300px;
+height:300px;
+object-fit:cover;
+animation:float 4s ease-in-out infinite;
+transition:.5s;
+}
+
+.side:hover{
+transform:scale(1.08);
+}
+
+.logo{
+width:320px;
+height:auto;
+animation:glow 2s infinite alternate;
+}
+
+.menu{
+display:flex;
+justify-content:center;
+gap:35px;
+padding:30px;
+flex-wrap:wrap;
+}
+
+.menu a{
+background:black;
+color:gold;
+border:2px solid gold;
+padding:15px 35px;
+text-decoration:none;
+font-size:24px;
+border-radius:8px;
+transition:.4s;
+}
+
+.menu a:hover{
+background:gold;
+color:black;
+box-shadow:0 0 20px gold;
+}
+
+@keyframes glow{
+
+0%{
+filter:drop-shadow(0 0 8px gold);
+}
+
+50%{
+filter:drop-shadow(0 0 25px gold);
+}
+
+100%{
+filter:drop-shadow(0 0 45px gold);
+}
+
+}
+
+@keyframes float{
+
+0%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-15px);
+}
+
+100%{
+transform:translateY(0px);
+}
+
+}
+
+/* ========================= */
+/* MOBILE RESPONSIVE */
+/* ========================= */
+
+@media (max-width:768px){
+
+.hero{
+padding:15px;
+gap:8px;
+justify-content:center;
+}
+
+.side{
+width:28%;
+height:auto;
+}
+
+.logo{
+width:34%;
+height:auto;
+}
+
+.menu{
+gap:12px;
+padding:20px 10px;
+}
+
+.menu a{
+font-size:16px;
+padding:10px 18px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<hr>
+
+<div class="hero">
+
+<img src="product1.png" class="side">
+
+<img src="logo.png" class="logo">
+
+<img src="product2.jpg" class="side">
+
+</div>
+
+<hr>
+
+<div class="menu">
+
+<a href="about.html">About Us</a>
+
+<a href="product_edited_fixed.html">Product</a>
+
+<a href="contact.html">Customer Care</a>
+
+<a href="order_edited.html">Order Form</a>
+
+</div>
+
+<hr>
+
+</body>
+
+</html>
